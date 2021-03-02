@@ -1,9 +1,10 @@
 package beakjoon;
 
+//N과 M (3)
+
 import java.io.*;
 import java.util.*;
 
-//N과 M (3)
 
 public class Main6 {
 	static boolean[] c = new boolean[10];

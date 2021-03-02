@@ -1,10 +1,10 @@
 package beakjoon;
 
+//2309 일곱 난쟁이 : 브루트포스알고리즘 
 
 import java.io.*;
 import java.util.*;
 
-//2309 일곱 난쟁이 : 브루트포스알고리
 public class Main{
     public static int ans = 0;
     public static void main(String[] args) throws IOException{
