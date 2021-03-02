@@ -1,8 +1,11 @@
-package beakjoon;
+package programmers;
+
+//등굣길 : https://programmers.co.kr/learn/courses/30/lessons/42898
+//level 3
 
 import java.util.*;
 
-public class Main17 {
+public class programmers_42898 {
 	static int ans = 0;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

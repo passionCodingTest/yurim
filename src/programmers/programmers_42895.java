@@ -1,10 +1,13 @@
-package beakjoon;
+package programmers;
 
-public class Main18 {
+//https://programmers.co.kr/learn/courses/30/lessons/42895
+//level 3
+
+public class programmers_42895 {
 	static int[] d ;
 	static int ans = -1;
 	public static void main(String[] args) {
-		Main18 m = new Main18();
+		programmers_42895 m = new programmers_42895();
 		int N = 5;
 		int number = 12;
         d = new int[9];

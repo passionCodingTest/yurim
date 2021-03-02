@@ -1,5 +1,7 @@
 package beakjoon;
 
+//퇴사 : https://www.acmicpc.net/problem/14501
+
 import java.io.*;
 import java.util.*;
 

@@ -1,8 +1,11 @@
 package programmers;
 
+//기능 개발 : https://programmers.co.kr/learn/courses/30/lessons/42586?language=java
+//level 2
+
 import java.util.*;
 
-public class FunctionDevelop_level2 {
+public class programmers_42586 {
 
 	public static void main(String[] args) {
 		HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();

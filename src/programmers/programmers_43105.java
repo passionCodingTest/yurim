@@ -1,8 +1,9 @@
-package beakjoon;
+package programmers;
 
-//프로그래머스 
+//정수삼각형 : https://programmers.co.kr/learn/courses/30/lessons/43105
+//level3
 
-public class Main16 {
+public class programmers_43105 {
 	static int ans = 0;
 	static int[][] triangle = {{7}, {3, 8}, {8, 1, 0}, {2, 7, 4, 4}, {4, 5, 2, 6, 5}};
 	public static void main(String[] args) {
