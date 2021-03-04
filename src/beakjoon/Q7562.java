@@ -1,5 +1,6 @@
 package beakjoon;
 
+//나이트의 이동: https://www.acmicpc.net/problem/7562
 
 import java.io.*;
 import java.util.*;
