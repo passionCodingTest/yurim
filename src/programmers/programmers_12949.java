@@ -1,5 +1,7 @@
 package programmers;
 
+//행렬의 곱셈 : https://programmers.co.kr/learn/courses/30/lessons/12949?language=java
+
 public class programmers_12949 {
 
 	public static void main(String[] args) {
