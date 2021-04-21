@@ -1,60 +1,63 @@
 package beakjoon;
 
-//부등호 : https://www.acmicpc.net/problem/2529
+//부등호 : 2529
 
-import java.io.*;
 import java.util.*;
-
 public class Q2529 {
-	static boolean[] check = new boolean[10];
-	static String[] sign;
-	static int k;
-	static ArrayList<String> ok = new ArrayList<>();
-	public static void main(String[] args) throws IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		k = Integer.parseInt(br.readLine());
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		sign = new String[k];
-		for(int i = 0; i< k; i++) {
-			sign[i] = st.nextToken();
+	static String[] ineq;
+	static String maxStr = "";
+	static String minStr = "";
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		sc.nextLine();
+		String input = sc.nextLine();
+		ineq = input.split(" ");
+		int[] max = new int[n+1];
+		int[] min = new int[n+1];
+		int[] arr = new int[n+1];
+		for(int i = 0; i<n+1; i++) {
+			max[i] = 9-(n-i);
+			min[i] = i;
 		}
 		
-		go(0, "");
+		per1(max, 0, n+1, n+1);
+		per1(min, 0, n+1, n+1);
 		
-		Collections.sort(ok);
-		
-		bw.write(ok.get(ok.size()-1)+"\n");
-		bw.write(ok.get(0));
-		
-		bw.flush();
-		bw.close();
-		br.close();
+		System.out.println(maxStr+"\n"+minStr);
 	}
-	static void go(int index, String nums) {
-		if(index == k+1) {
-			ok.add(nums);
-			return ;
-		}
-		for(int i = 0; i<= 9 ; i++) {
-			if(check[i]) continue;
-			if(index == 0 || checking(nums.charAt(index-1), (char) (i+'0'), sign[index-1])) {
-				check[i] = true;
-				go(index+1, nums+i);//숫자 포함 
-				check[i] = false;
+	static void per1(int[] arr, int depth, int n, int r) {
+		if(depth == r) {
+			boolean check = false;
+			for(int i = 0; i<ineq.length; i++) {
+				switch(ineq[i]) {
+					case "<" : check = arr[i] < arr[i+1] ? true : false; break;
+					case ">" : check = arr[i] > arr[i+1] ? true : false; break;
+				}
+				if(!check) return;
 			}
+			
+			if(check) {
+				String a = "";
+				for(int i : arr) {
+					a += i;
+				}
+				if(minStr == "" || minStr.compareTo(a) > 0) minStr = a;
+				if(maxStr == "" || maxStr.compareTo(a) < 0) maxStr = a;
+			}
+			return;
 		}
-		
+		for(int i = depth; i<n; i++) {
+			swap(arr, depth, i);
+			per1(arr, depth+1, n, r);
+			swap(arr, depth, i);
+		}
 	}
 	
-	static boolean checking(char a, char b, String op) {
-		if(op == ">") {
-			if(a < b) return false;
-		}
-		if(op == "<"){
-			if(a > b) return false;
-		}
-		return true;
+	static void swap(int[] arr, int depth, int i) {
+		int temp = arr[depth];
+		arr[depth] = arr[i];
+		arr[i] = temp;
 	}
+
 }
