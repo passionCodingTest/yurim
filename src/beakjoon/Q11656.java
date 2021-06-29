@@ -2,7 +2,6 @@ package beakjoon;
 
 import java.util.*;
 public class Q11656 {
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.next();
@@ -16,5 +15,4 @@ public class Q11656 {
 			System.out.println(s);
 		}
 	}
-
 }
